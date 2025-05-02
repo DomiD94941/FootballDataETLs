@@ -37,6 +37,8 @@ git clone https://github.com/yourusername/football-etl-pipeline.git
 cd football-etl-pipeline
 ```
 ### .env
+
+```bash
 export AIRFLOW_VAR_API_KEY=YOUR_API_KEY
 export AIRFLOW_VAR_BASE_URL=https://v3.football.api-sports.io
 export AIRFLOW_VAR_DATA_BASE_USERNAME=airflow
@@ -44,4 +46,4 @@ export AIRFLOW_VAR_DATA_BASE_PASSWORD=airflow
 export AIRFLOW_VAR_DATA_BASE_HOST=oracle-db
 export AIRFLOW_VAR_DATA_BASE_PORT=1521 
 export AIRFLOW_VAR_DATA_BASE_SERVICE_NAME=XEPDB1
-
+```

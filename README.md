@@ -4,32 +4,33 @@ A beautiful, automated ETL pipeline built with **Apache Airflow** that extracts 
 
 It supports **incremental updates** via Airflow Variables and XComs, ensures **referential integrity**, and runs on a **scheduled basis**.
 
-------------
+---
 
 ## Features
 
 - Extracts football data from [API-Football](https://www.api-football.com/)
-- Creates normalized Oracle DB tables automatically (if they don’t exist)
+- Automatically creates normalized Oracle DB tables (if not present)
 - Loads and transforms data using Python and SQL
-- Handles incremental loads with Airflow Variables/XComs
+- Performs incremental loads using Airflow Variables and XComs
+- Searches existing DB data to avoid redundant API calls
 - Designed to be idempotent and referentially consistent
-- Fully automated and scheduled using Airflow
+- Fully automated and scheduled via Airflow
 
-------------
+---
 
 ## Tech Stack
 
 - **Apache Airflow**
 - **Python**
 - **Oracle Database**
-- **Docker** (optional, for local dev)
+- **Docker** 
 - **API-Football (public API)**
 
-------------
+---
 
-## Setup
+## ⚙️ Setup
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/yourusername/football-etl-pipeline.git

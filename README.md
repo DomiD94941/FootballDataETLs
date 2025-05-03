@@ -1,9 +1,5 @@
 # A Beautiful Football ETL pipelines with Apache Airflow
 
-A beautiful, automated ETL pipeline built with **Apache Airflow** that extracts football data from a public API, creates relational tables in an **Oracle Database**, and loads cleaned, structured data.
-
-It supports **incremental updates** via Airflow Variables and XComs, ensures **referential integrity**, and runs on a **scheduled basis**.
-
 ---
 
 ## Features

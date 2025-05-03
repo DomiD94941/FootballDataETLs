@@ -49,7 +49,7 @@ export AIRFLOW_VAR_DATA_BASE_PORT=1521
 export AIRFLOW_VAR_DATA_BASE_SERVICE_NAME=XEPDB1
 ```
 
-### 3. Initialize and run Airflow with astro
+### 3. Run Airflow with astro
 ```bash
 astro dev start
 ```

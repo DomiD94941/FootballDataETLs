@@ -38,7 +38,7 @@ with DAG(
         trigger_dag_id="match_statistics_etl_dag",
     )
 
-    # Define execution order
+    # Execution order
     (
         trigger_seasons >>
         trigger_season_league >>

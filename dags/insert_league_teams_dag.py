@@ -181,6 +181,9 @@ def insert_teams(ti):
         is_national = 'Y' if str(team['national']).lower() == 'true' else 'N'
         stadium_id = venue['id']
 
+        if stadium_id is None:
+            continue
+            
         stadium_data = {
             'stadium_id': stadium_id,
             'stadium_name': venue['name'],

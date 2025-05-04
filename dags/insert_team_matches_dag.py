@@ -159,6 +159,7 @@ def insert_team_matches(ti):
 
         if not stadium_id:
             continue
+            
         cursor.execute(check_stadium_query, {'stadium_id': stadium_id})
         if cursor.fetchone()[0] == 0:
             continue

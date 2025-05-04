@@ -6,8 +6,8 @@ services:
       - 1521:1521
     environment:
       ORACLE_PASSWORD: oracle
-      APP_USER: airflow
-      APP_USER_PASSWORD: airflow
+      APP_USER: YOUR_DB_USERNAME
+      APP_USER_PASSWORD: YOUR_DB_PASSWORD
     healthcheck:
       test: ["CMD", "bash", "-c", "echo 'select 1 from dual;' | sqlplus -S airflow/airflow@localhost/XEPDB1"]
       interval: 10s

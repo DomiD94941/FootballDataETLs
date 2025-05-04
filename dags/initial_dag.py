@@ -5,7 +5,7 @@ from datetime import datetime
 import time
 
 def wait_few_seconds():
-    time.sleep(4)  # Wait few seconds for new data in DB, in order to be sure that new data exists
+    time.sleep(4)  # Wait a few seconds between tasks that depend on the database
 
 with DAG(
     "first_trigger_in_correct_order_dag",

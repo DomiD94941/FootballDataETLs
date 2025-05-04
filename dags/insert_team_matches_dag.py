@@ -138,6 +138,7 @@ def insert_team_matches(ti):
         print(f"Season ID not found for year {season_year}")
         close_connection()
         return
+        
     season_id = season_id_result[0]
 
     insert_matches = []
@@ -161,6 +162,7 @@ def insert_team_matches(ti):
             continue
             
         cursor.execute(check_stadium_query, {'stadium_id': stadium_id})
+        
         if cursor.fetchone()[0] == 0:
             continue
 

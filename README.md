@@ -49,7 +49,10 @@ export AIRFLOW_VAR_DATA_BASE_SERVICE_NAME=XEPDB1
 ```bash
 astro dev start
 ```
-
+### 4. Add network (have to be done)
+```bash
+docker network connect football-stats-app_a20170_airflow oracle-db
+```
 
 
    

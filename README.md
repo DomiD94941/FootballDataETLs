@@ -16,6 +16,7 @@
 
 ## Tech Stack
 
+- **Astronomer (Local Dev CLI via Astro)**
 - **Apache Airflow**
 - **Python**
 - **Oracle Database**

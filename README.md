@@ -33,7 +33,9 @@
 git clone https://github.com/yourusername/nlp-job-offer-pipeline.git
 cd nlp-job-offer-pipeline
 ### 2. Set up .env
- 
+```
+
+### 2. Set up .env
 ```bash
 AIRFLOW_VAR_DB_NAME=airflow
 AIRFLOW_VAR_DB_USER=airflow

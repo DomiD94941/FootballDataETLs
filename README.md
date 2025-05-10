@@ -4,24 +4,24 @@
 
 ## Features
 
-- Extracts and processes raw job offer descriptions (e.g. from scraped or uploaded data)
-- Supports **English** sing spaCy’s `en_core_web_sm`
-- Cleans and lemmatizes texts for further NLP or ML analysis
-- Stores processed data in a structured **PostgreSQL** table
-- Built to be **idempotent**, modular, and production-ready
-- Uses Airflow **PostgresHook** and **Variables** for configuration and flexibility
-- Fully orchestrated and scheduled via **Apache Airflow**
+- Extracts football data from [API-Football](https://www.api-football.com/)
+- Automatically creates normalized Oracle DB tables (if not present)
+- Loads and transforms data using Python and SQL
+- Performs incremental loads using Airflow Variables and XComs
+- Searches existing DB data to avoid redundant API calls
+- Designed to be idempotent and referentially consistent
+- Fully automated and scheduled via Airflow
 
 ---
 
 ## Tech Stack
 
+- **Astronomer (Local Dev CLI via Astro)**
 - **Apache Airflow**
-- **Python 3.11**
-- **spaCy**
-- **PostgreSQL**
-- **Docker**
-- **Docker Compose**
+- **Python**
+- **Oracle Database**
+- **Docker** 
+- **API-Football (public API)**
 
 ---
 
@@ -30,18 +30,20 @@
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/nlp-job-offer-pipeline.git
-cd nlp-job-offer-pipeline
-### 2. Set up .env
+git clone https://github.com/yourusername/football-etl-pipeline.git
+cd football-etl-pipeline
 ```
 
 ### 2. Set up .env
+ 
 ```bash
-AIRFLOW_VAR_DB_NAME=airflow
-AIRFLOW_VAR_DB_USER=airflow
-AIRFLOW_VAR_DB_PASSWORD=airflow
-AIRFLOW_VAR_DB_HOST=postgres
-AIRFLOW_VAR_DB_PORT=5432
+export AIRFLOW_VAR_API_KEY=YOUR_API_KEY
+export AIRFLOW_VAR_BASE_URL=https://v3.football.api-sports.io
+export AIRFLOW_VAR_DATA_BASE_USERNAME=airflow
+export AIRFLOW_VAR_DATA_BASE_PASSWORD=airflow
+export AIRFLOW_VAR_DATA_BASE_HOST=oracle-db
+export AIRFLOW_VAR_DATA_BASE_PORT=1521 
+export AIRFLOW_VAR_DATA_BASE_SERVICE_NAME=XEPDB1
 ```
 
 ### 3. Run Airflow with Astro
@@ -49,5 +51,8 @@ AIRFLOW_VAR_DB_PORT=5432
 astro dev start
 ```
 
-
+### 4. Add network (must be done)
+```bash
+docker network connect football-stats-app_a20170_airflow oracle-db
+```
    

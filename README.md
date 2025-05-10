@@ -5,7 +5,7 @@
 ## Features
 
 - Extracts and processes raw job offer descriptions (e.g. from scraped or uploaded data)
-- Supports both **English** and **Polish** using spaCy’s `en_core_web_sm` and `pl_core_news_sm`
+- Supports **English** sing spaCy’s `en_core_web_sm`
 - Cleans and lemmatizes texts for further NLP or ML analysis
 - Stores processed data in a structured **PostgreSQL** table
 - Built to be **idempotent**, modular, and production-ready

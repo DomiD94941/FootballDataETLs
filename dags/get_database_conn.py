@@ -1,5 +1,5 @@
 import oracledb
-from airflow.models import Variable
+from airflow.sdk import Variable
 
 # Konfiguracja bazy danych Oracle
 ORACLE_CONFIG = {

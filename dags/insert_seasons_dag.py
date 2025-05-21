@@ -4,7 +4,7 @@ from datetime import datetime
 import requests
 import json
 from dags.get_database_conn import get_cursor, close_connection
-from airflow.models import Variable
+from airflow.sdk import Variable
 from pathlib import Path
 
 def create_season_table():
